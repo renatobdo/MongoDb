@@ -1,0 +1,141 @@
+c:\mongo\data
+
+//executa o servidor mongodb
+C:\Program Files\MongoDB\Server\4.2\bin>mongod
+
+//executa o cliente do mongo e permite que digitemos comandos:
+C:\Program Files\MongoDB\Server\4.2\bin>mongo
+
+
+//cria uma coleção:
+db.createCollection("Employee")
+
+//mostra os bancos
+show dbs
+
+//Já cria um banco 
+use SensorDB
+
+//apaga
+db.dropDatabase()
+
+//mostra os registros de Sensor
+db.Sensor.find()
+
+db.alunos.find({"_id" : ObjectId("56cb0002b6d75ec12f75d3b5")}).pretty()
+
+//Mostra as coleções
+show collections
+
+use test
+
+db.createCollection("alunos")
+
+db.alunos.insert({
+     "nome": "Felipe",
+     "data_nascimento": new Date(1994, 02, 26),
+     "notas": [10, 9, 4.5],
+     "curso": {
+         "nome": "Sistemas de informação"
+     },
+     "habilidades": [
+         {
+             "nome": "Inglês",
+             "nível": "Avançado"
+         }
+     ]
+ })
+
+db.alunos.insert({
+    "nome": "Paulo",
+    "data_nascimento": new Date(1979, 12, 31),
+    "notas": [10, 9, 7],
+    "curso": {
+        "nome": "Ciências da computação"
+    },
+    "habilidades": [
+        {
+            "nome": "Inglês",
+            "nível": "Avançado"
+        },
+        {
+            "nome": "Francês",
+            "nível": "Avançado"
+        }
+    ]
+})
+
+db.alunos.insert({
+    "nome": "Daniela",
+    "data_nascimento": new Date(1995, 07, 17),
+    "notas": [10, 9, 7],
+    "curso": {
+        "nome": "Moda"
+    },
+    "habilidades": [
+        {
+            "nome": "Alemão",
+            "nível": "Básico"
+        }
+    ]
+})
+
+
+//Para buscar os alunos que cursam "Sistema de informação":
+db.alunos.find({"curso.nome" : "Sistema de informação"})
+
+//Atualização
+db.alunos.update(
+    {"curso.nome" : "Sistemas de informação"},
+    {
+        $set : {
+            "curso.nome" : "Sistemas de Informação"
+        }
+    }
+)
+
+//Atualiza todos os registros
+db.alunos.update(
+    {"curso.nome" : "Sistemas de informação"},
+    {
+        $set : 
+           {"curso.nome" : "Sistemas de Informação"}  
+        }, 
+      {
+        multi : true 
+      }
+)
+
+//atualiza pelo id
+db.alunos.update(
+    {"_id" : ObjectId("56cb0002b6d75ec12f75d3b5")},
+    {$set : {
+        {
+            "notas" : [
+                10,
+                9,
+                4.5,
+                8.5
+            ]
+        }    
+    }
+}
+
+//coloca uma nota dentro do array com o push
+db.alunos.update(
+    {"_id" : ObjectId("56cb0002b6d75ec12f75d3b5")},
+    {
+        $push : {
+            notas : 8.5
+        }    
+    }
+)
+
+db.alunos.update(
+    {"_id" : ObejctId("56cb0139b6d75ec12f75d3b6")},
+    {
+        $push : {
+            "notas" : {$each : [8.5, 3] }
+        }
+    }
+)
