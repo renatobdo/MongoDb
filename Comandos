@@ -139,3 +139,19 @@ db.alunos.update(
         }
     }
 )
+
+
+
+db.alunos.update(
+{ "_id" : ObjectId("56cb0139b6d75ec12f75d3b6") },
+{
+    $set : {
+    localizacao : {
+        endereco : "Rua Vergueiro, 3185",
+        cidade : "São Paulo",
+        coordinates : [-23.588213, -46.632356],
+        type : "Point"
+        }
+    }
+}
+)
