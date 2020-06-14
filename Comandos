@@ -134,6 +134,89 @@ db.alunos.insert({
   }
 })
 
+db.alunos.insert({
+    "_id" : ObjectId("58fbb53be824cc048dfae263"),
+    "nome" : "Julia",
+    "data_nascimento" : ISODate("2017-04-11T03:00:00.000Z"),
+    "curso" : {
+        "nome" : "Sistema de Informacao"
+    },
+    "habilidades" : [ 
+        {
+            "nome" : "Ingles",
+            "nivel" : "Intermediario"
+        }
+    ],
+    "notas" : [ 
+        8.0, 
+        9.0
+    ],
+    "contato" : {
+        "endereco" : "Av. Kenkiti Simomoto, 300 - Jaguare, São Paulo - SP, 05347-010",
+        "coordinates" : [ 
+            -23.551006, 
+            -46.740403
+        ],
+        "type" : "Point"
+    }
+})
+
+db.alunos.insert({
+    "_id" : ObjectId("590e0e03c5bb650311dc3de3"),
+    "nome" : "Joaquina",
+    "data_nascimento" : ISODate("2017-05-09T03:00:00.000Z"),
+    "curso" : {
+        "nome" : "Administracao"
+    },
+    "habilidades" : [],
+    "notas" : [],
+    "contato" : {
+        "endereco" : "Rua Vergueiro, 3100",
+        "coordinates" : [ 
+            -23.5872747, 
+            -46.6338947
+        ],
+        "type" : "Point"
+    }
+})
+
+db.alunos.insert({
+    "_id" : ObjectId("590e1659c5bb65038ac042e4"),
+    "nome" : "Jose",
+    "data_nascimento" : ISODate("2017-05-22T03:00:00.000Z"),
+    "curso" : {
+        "nome" : "Administracao"
+    },
+    "habilidades" : [],
+    "notas" : [],
+    "contato" : {
+        "endereco" : "Rua Vergueiro, 3000",
+        "coordinates" : [ 
+            -23.5872747, 
+            -46.6338947
+        ],
+        "type" : "Point"
+    }
+})
+
+db.alunos.insert({
+    "_id" : ObjectId("590e17f4c5bb65038ac042e8"),
+    "nome" : "Luiza",
+    "data_nascimento" : ISODate("2017-05-18T03:00:00.000Z"),
+    "curso" : {
+        "nome" : "Geografia"
+    },
+    "habilidades" : [],
+    "notas" : [],
+    "contato" : {
+        "endereco" : "Rua Gaivota, 300 - Indianópolis, São Paulo - State of São Paulo, Brazil",
+        "coordinates" : [ 
+            -23.5996547, 
+            -46.6639453
+        ],
+        "type" : "Point"
+    }
+})
 
 //Para buscar os alunos que cursam "Sistema de informação":
 db.alunos.find({"curso.nome" : "Sistema de informação"})
