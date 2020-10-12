@@ -292,3 +292,12 @@ db.alunos.update(
     }
 }
 )
+
+Contanto a quantidade de cada tipo de dado:
+
+db.AgentLog.find({"contentype":"1"}).count();
+db.AgentLog.find({"contentype":"2"}).count();
+db.AgentLog.find({"contentype":"3"}).count();
+db.AgentLog.find({"contentype":"4"}).count();
+db.AgentLog.find({"contentype":"5"}).count();
+
