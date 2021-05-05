@@ -16,6 +16,12 @@ show dbs
 //Já cria um banco 
 use SensorDB
 
+//Visualiza as coleções
+show collections
+
+//Visualiza os dados da coleção:
+db.AgentLog.find()
+
 //apaga
 db.dropDatabase()
 
