@@ -22,6 +22,14 @@ show collections
 //Visualiza os dados da coleção:
 db.AgentLog.find()
 
+//Pesquisa como o like no sql https://stackoverflow.com/questions/3305561/how-to-query-mongodb-with-like
+//Procura dados cuja descrição são do dia 01 de julho:
+db.AgentLog.find({"description":/01.07/})
+db.AgentLog.find({"description":/01.07/}).count()
+//pega os contentype = 5 com data 01/07:
+db.AgentLog.find({"description":/01.07/, "contentype":/5/}).count()
+
+
 //apaga
 db.dropDatabase()
 
