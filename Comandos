@@ -27,6 +27,7 @@ db.AgentLog.find()
 db.AgentLog.find({"description":/01.07/})
 db.AgentLog.find({"description":/01.07/}).count()
 //pega os contentype = 5 com data 01/07:
+https://docs.mongodb.com/manual/tutorial/query-documents/
 db.AgentLog.find({"description":/01.07/, "contentype":/5/}).count()
 
 
