@@ -51,7 +51,7 @@ use test
 db.createCollection("alunos")
 
 
-
+db.createCollection("AgentLog");
 
 
 
