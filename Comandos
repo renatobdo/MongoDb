@@ -48,6 +48,16 @@ db.AgentLog.find({contentype:"2", payload:/^<!DOCTYPE html/}).count();
 //Procura por content type = 3 e que contenha {t:
 {payload: /^{t:/}
 
+//Procura por content type = 3 e que contenha |t:
+{contentype:"4", payload: /^t/}
+
+db.AgentLog.find({"contentype":"4", payload:/^t/}).count();
+
+
+
+
+
+
 //apaga
 db.dropDatabase()
 
