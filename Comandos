@@ -30,6 +30,23 @@ db.AgentLog.find({"description":/01.07/}).count()
 https://docs.mongodb.com/manual/tutorial/query-documents/
 db.AgentLog.find({"description":/01.07/, "contentype":/5/}).count()
 
+Db Compass
+//seleciona tudo que contenha <measure 
+// Like '<measure%'
+{payload: /^<measure/}
+
+//Na linha de comando:
+db.AgentLog.find({contentype:"1", payload:/^<measure/}).count();
+
+db.AgentLog.find({"description":/07.07/, "contentype":/1/})
+//
+
+//Procura por content type = 2 e que contenha <!DOCTYPE html
+db.AgentLog.find({contentype:"2", payload:/^<!DOCTYPE html/}).count();
+
+
+//Procura por content type = 3 e que contenha {t:
+{payload: /^{t:/}
 
 //apaga
 db.dropDatabase()
