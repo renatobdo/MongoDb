@@ -36,26 +36,31 @@ Db Compass
 {payload: /^<measure/}
 
 //Na linha de comando:
+db.AgentLog.find({"contentype":"1"}).count();
 db.AgentLog.find({contentype:"1", payload:/^<measure/}).count();
 
 db.AgentLog.find({"description":/07.07/, "contentype":/1/})
 //
 
 //Procura por content type = 2 e que contenha <!DOCTYPE html
+db.AgentLog.find({"contentype":"2"}).count();
 db.AgentLog.find({contentype:"2", payload:/^<!DOCTYPE html/}).count();
 
 
 //Procura por content type = 3 e que contenha {t:
 {payload: /^{t:/}
+db.AgentLog.find({"contentype":"3"}).count();
 
-//Procura por content type = 3 e que contenha |t:
+//Procura por content type = 4 e que contenha |t:
 {contentype:"4", payload: /^t/}
+db.AgentLog.find({"contentype":"4"}).count();
 
 db.AgentLog.find({"contentype":"4", payload:/^t/}).count();
 
 
 
-
+db.AgentLog.find({"contentype":"5"}).count();
+db.AgentLog.find({"contentype":"6"}).count();
 
 
 //apaga
