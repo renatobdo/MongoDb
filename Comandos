@@ -58,9 +58,12 @@ db.AgentLog.find({"contentype":"4"}).count();
 db.AgentLog.find({"contentype":"4", payload:/^t/}).count();
 
 
-
+// Conta todos os dados aleatórios
 db.AgentLog.find({"contentype":"5"}).count();
+
+// Conta todos os dados do tipo LoRa
 db.AgentLog.find({"contentype":"6"}).count();
+db.AgentLog.find({contentype:"6", payload:/applicationID:/}).count()
 
 
 //apaga
