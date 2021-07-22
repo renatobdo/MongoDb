@@ -50,6 +50,7 @@ db.AgentLog.find({contentype:"2", payload:/^<!DOCTYPE html/}).count();
 //Procura por content type = 3 e que contenha {t:
 {payload: /^{t:/}
 db.AgentLog.find({"contentype":"3"}).count();
+{contentype:"3", payload: /^{t/}
 
 //Procura por content type = 4 e que contenha |t:
 {contentype:"4", payload: /^t/}
