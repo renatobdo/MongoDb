@@ -61,10 +61,18 @@ db.AgentLog.find({"contentype":"4", payload:/^t/}).count();
 
 // Conta todos os dados aleatórios
 db.AgentLog.find({"contentype":"5"}).count();
+//somar os dados aleatórios que vem somente do LoRa, o resto são dados aleatórios de outros tipos:
+Executar esse comando no MongoDB Compass porque na linha de comando não funcionou:
+{contentype:"5", payload:/^{phyPayload:/}
+{contentype:"5", payload:/^{token:/}
+db.AgentLog.find({contentype:"5", payload:/token:/}).count();
+
 
 // Conta todos os dados do tipo LoRa
 db.AgentLog.find({"contentype":"6"}).count();
-db.AgentLog.find({contentype:"6", payload:/applicationID:/}).count()
+db.AgentLog.find({contentype:"6", payload:/applicationID:/}).count();
+//verifica se tem algum dado vindo do LoRa incorreto:
+db.AgentLog.find({contentype:"6", payload:/phyPayload:/}).count();
 
 
 //apaga
